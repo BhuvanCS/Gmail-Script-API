@@ -1,0 +1,61 @@
+{
+    "rules": [
+        {
+            "predicate": "All",
+            "conditions": [
+                {
+                    "field": "from",
+                    "operator": "contains",
+                    "value": "205bhuvics"
+                },
+                {
+                    "field": "subject",
+                    "operator": "contains",
+                    "value": "Update"
+                }
+            ],
+            "actions": [
+                "mark_as_read",
+                "move_to_folder:Important"
+            ]
+        },
+        {
+            "predicate": "Any",
+            "conditions": [
+                {
+                    "field": "from",
+                    "operator": "contains",
+                    "value": "Google"
+                },
+                {
+                    "field": "subject",
+                    "operator": "contains",
+                    "value": "Weekly Update"
+                }
+            ],
+            "actions": [
+                "mark_as_unread",
+                "move_to_folder:SPAM"
+            ]
+        },
+        {
+            "predicate": "Any",
+            "conditions": [
+                {
+                    "field": "subject",
+                    "operator": "contains",
+                    "value": "College"
+                },
+                {
+                    "field": "subject",
+                    "operator": "contains",
+                    "value": "Library"
+                }
+            ],
+            "actions": [
+                "move_to_folder:College",
+                "mark_as_read"
+            ]
+        }
+    ]
+}
